@@ -29,7 +29,7 @@ public class ContactServiceTest {
     protected ContactService contactService;
         
     @Test
-    @Timed(millis=1000)
+    @Timed(millis=2000)
     @Transactional
     public void sampleTest(){
     	
@@ -47,6 +47,10 @@ public class ContactServiceTest {
         
         int contactId = cont.getId();
         assertTrue(contactId>0);
+        
+        Contact c = contactService.getContact(contactId);
+        assertNotNull(c);
+        assertEquals("00306985587996", c.getTelephone());
         
         int size2 = contactService.listContact().size();
         assertEquals(size2, size1+1);
