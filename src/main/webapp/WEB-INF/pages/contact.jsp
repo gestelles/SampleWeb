@@ -9,7 +9,7 @@
  
 <h2>Contact Manager</h2>
  
-<form:form method="post" action="add.html" commandName="contact">
+<form:form method="post" action="add" commandName="contact">
  
     <table>
     <tr>
