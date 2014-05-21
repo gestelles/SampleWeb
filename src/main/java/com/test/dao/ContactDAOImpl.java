@@ -18,8 +18,8 @@ public class ContactDAOImpl implements ContactDAO {
         sessionFactory.getCurrentSession().save(contact);
     }
  
-    public List<Contact> listContact() {
- 
+    @SuppressWarnings("unchecked")
+	public List<Contact> listContact() {
         return sessionFactory.getCurrentSession().createQuery("from Contact")
                 .list();
     }
