@@ -14,6 +14,11 @@ public class ContactDAOImpl implements ContactDAO {
     @Autowired
     private SessionFactory sessionFactory;
  
+    @Override
+    public Contact get(int id) {
+    	return (Contact)sessionFactory.getCurrentSession().get(Contact.class, id);
+    }
+    
     public void addContact(Contact contact) {
         sessionFactory.getCurrentSession().save(contact);
     }

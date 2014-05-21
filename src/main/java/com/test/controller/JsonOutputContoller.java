@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,6 +28,12 @@ public class JsonOutputContoller {
     public @ResponseBody List<Contact> generateJsonResponse(){
         List<Contact> contactList = contactService.listContact();
         return contactList;
+    }
+
+    @RequestMapping("/contact/{id}")
+    public @ResponseBody Contact generateJsonResponse(@PathVariable("id") int id){
+        Contact e = contactService.getContact(id);
+        return e;
     }
     
 }

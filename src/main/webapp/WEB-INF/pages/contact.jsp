@@ -48,6 +48,7 @@
 </tr>
 <c:forEach items="${contactList}" var="contact">
     <tr>
+        <td>${contact.id}</td>
         <td>${contact.lastname}, ${contact.firstname} </td>
         <td>${contact.email}</td>
         <td>${contact.telephone}</td>
